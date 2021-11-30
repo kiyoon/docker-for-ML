@@ -128,4 +128,4 @@ RUN apt-get update && apt-get install -y sudo && \
 
 # Make 10 users with UID 1000 to 1009 because we don't know who's using it as of yet.
 RUN /bin/bash -c 'for i in {1000..1009}; do adduser --disabled-password --gecos "" docker$i && adduser docker$i sudo; done'
-RUN echo '%sudo ALL=(ALL) NOPASSWD=ALL' >> /etc/sudoers
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
